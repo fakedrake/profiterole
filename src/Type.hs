@@ -19,7 +19,7 @@ data Val = Val
     ,timeInh :: Double -- Time spent under this node excluding rerooted
     ,timeInd :: Double -- Time spent in this code
     ,entries :: Integer -- Number of times this node was called
-    } deriving Show
+    } deriving (Show,Eq,Ord)
 
 
 mergeVal :: Val -> Val -> Val

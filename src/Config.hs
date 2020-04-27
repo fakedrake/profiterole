@@ -1,10 +1,9 @@
 {-# LANGUAGE LambdaCase #-}
 {-# LANGUAGE ViewPatterns #-}
 
-module Config(emptyConfig, readConfig, Config(..)) where
+module Config(emptyConfig, readConfig, Config(..),showConfig) where
 
 import Data.Maybe
-import Debug.Trace
 import Data.List.Extra
 import qualified Data.Map as Map
 import System.IO.Extra

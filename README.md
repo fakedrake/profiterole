@@ -23,3 +23,13 @@ Profiterole will generate `myprogram.profiterole.txt` and `myprogram.profiterole
 * `IND` is the individual time, just like GHC profiles.
 
 For large programs, using `+RTS -P` (instead of the common `-p`) will give more accurate results.
+
+## Configuration
+
+Profiterole looks for `.profiterole.yaml` (not really a yaml file, just a sequence of lines `<tag>: <entry>`). We can force the status of certain tags in the profiterole output.
+
+- `root` forces an entry to be the root entry.
+- `bury` forces an entry to *not* be root.
+- (fork) `fold` hides all the children of an entry. Use this if you are uninterested in the internal performance breakdown of large parts of your project (eg hashing)
+- (fork) `omit` omit certain entries as if they had no SCC.
+- (fork) `rbury` bury and entry and all it's children.
